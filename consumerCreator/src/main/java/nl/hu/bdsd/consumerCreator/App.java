@@ -16,7 +16,7 @@ import nl.hu.bdsd.consumerCreator.consumer.ConsumerCreator;
 
 public class App {
 	public static void main(String[] args) throws IOException {
-		runConsumer();
+		runConsumer();		
 	}
 
 	static void runConsumer() throws IOException {
@@ -33,7 +33,7 @@ public class App {
 		    	String title;
 		    	try {
 		    		title = String.format("title = \"%s\"",
-		    				jsonObject.get("_sources").getAsJsonObject().get("title").getAsString());
+		    				jsonObject.get("_source").getAsJsonObject().get("title").getAsString());
 		    	}
 		    	
 		    	catch (NullPointerException e){
