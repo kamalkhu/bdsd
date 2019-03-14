@@ -34,9 +34,11 @@ public class App {
 		try (BufferedReader br = new BufferedReader(new FileReader(file))) {
 
 			for (int index = 0; index < messageCount; index++) {
-				String line = br.readLine();
+				String line = br.readLine().trim();
+				
+				if (line.charAt(line.length() - 1) == ',') line = line.substring(0, line.length() - 1);
 				final ProducerRecord<Long, String> record = new ProducerRecord<Long, String>(IKafkaConstants.TOPIC_NAME,
-						(long) index, line.substring(0, line.length() - 1));
+						(long) index, line);
 
 				try {
 					RecordMetadata metadata = producer.send(record).get();
