@@ -15,26 +15,38 @@
       <file leaf-file-name="App.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/nl/hu/bdsd/consumerCreator/App.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1314">
-              <caret line="18" column="13" lean-forward="false" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+            <state relative-caret-position="527">
+              <caret line="71" column="21" lean-forward="true" selection-start-line="71" selection-start-column="21" selection-end-line="71" selection-end-column="21" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#612#628#0" expanded="true" />
-                <element signature="e#2931#2947#0" expanded="true" />
-                <element signature="e#3465#3481#0" expanded="true" />
-                <element signature="e#3538#3555#0" expanded="true" />
-                <element signature="e#3638#3646#0" expanded="true" />
-                <element signature="e#4266#4282#0" expanded="true" />
+                <element signature="e#670#686#0" expanded="true" />
+                <element signature="e#3061#3077#0" expanded="true" />
+                <element signature="e#3595#3611#0" expanded="true" />
+                <element signature="e#3668#3685#0" expanded="true" />
+                <element signature="e#3768#3776#0" expanded="true" />
+                <element signature="e#4396#4412#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Document.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Document.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/nl/hu/bdsd/consumerCreator/persistence/Document.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="573">
-              <caret line="71" column="1" lean-forward="true" selection-start-line="71" selection-start-column="1" selection-end-line="71" selection-end-column="1" />
+            <state relative-caret-position="556">
+              <caret line="70" column="5" lean-forward="true" selection-start-line="70" selection-start-column="5" selection-end-line="70" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ArtikelDAO.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/nl/hu/bdsd/consumerCreator/persistence/ArtikelDAO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="291">
+              <caret line="28" column="54" lean-forward="true" selection-start-line="28" selection-start-column="54" selection-end-line="28" selection-end-column="54" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -58,8 +70,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/nl/hu/bdsd/consumerCreator/App.java" />
         <option value="$PROJECT_DIR$/src/main/java/nl/hu/bdsd/consumerCreator/persistence/Document.java" />
+        <option value="$PROJECT_DIR$/src/main/java/nl/hu/bdsd/consumerCreator/persistence/ArtikelDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/nl/hu/bdsd/consumerCreator/App.java" />
       </list>
     </option>
   </component>
@@ -294,7 +307,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4354000" />
+    <option name="totallyTimeSpent" value="5630000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
@@ -365,12 +378,46 @@
           <caret line="79" column="51" lean-forward="false" selection-start-line="79" selection-start-column="51" selection-end-line="79" selection-end-column="51" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#612#628#0" expanded="true" />
-            <element signature="e#2931#2947#0" expanded="true" />
-            <element signature="e#3465#3481#0" expanded="true" />
-            <element signature="e#3538#3555#0" expanded="true" />
-            <element signature="e#3638#3646#0" expanded="true" />
-            <element signature="e#4266#4282#0" expanded="true" />
+            <element signature="e#670#686#0" expanded="true" />
+            <element signature="e#3061#3077#0" expanded="true" />
+            <element signature="e#3595#3611#0" expanded="true" />
+            <element signature="e#3668#3685#0" expanded="true" />
+            <element signature="e#3768#3776#0" expanded="true" />
+            <element signature="e#4396#4412#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/nl/hu/bdsd/consumerCreator/persistence/BaseDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/nl/hu/bdsd/consumerCreator/persistence/Document.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="556">
+          <caret line="70" column="5" lean-forward="true" selection-start-line="70" selection-start-column="5" selection-end-line="70" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/nl/hu/bdsd/consumerCreator/App.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="71" column="21" lean-forward="true" selection-start-line="71" selection-start-column="21" selection-end-line="71" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#670#686#0" expanded="true" />
+            <element signature="e#3061#3077#0" expanded="true" />
+            <element signature="e#3595#3611#0" expanded="true" />
+            <element signature="e#3668#3685#0" expanded="true" />
+            <element signature="e#3768#3776#0" expanded="true" />
+            <element signature="e#4396#4412#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -383,34 +430,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/nl/hu/bdsd/consumerCreator/persistence/BaseDAO.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/nl/hu/bdsd/consumerCreator/persistence/ArtikelDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/nl/hu/bdsd/consumerCreator/App.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1314">
-          <caret line="18" column="13" lean-forward="false" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#612#628#0" expanded="true" />
-            <element signature="e#2931#2947#0" expanded="true" />
-            <element signature="e#3465#3481#0" expanded="true" />
-            <element signature="e#3538#3555#0" expanded="true" />
-            <element signature="e#3638#3646#0" expanded="true" />
-            <element signature="e#4266#4282#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/nl/hu/bdsd/consumerCreator/persistence/Document.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="573">
-          <caret line="71" column="1" lean-forward="true" selection-start-line="71" selection-start-column="1" selection-end-line="71" selection-end-column="1" />
+        <state relative-caret-position="291">
+          <caret line="28" column="54" lean-forward="true" selection-start-line="28" selection-start-column="54" selection-end-line="28" selection-end-column="54" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
