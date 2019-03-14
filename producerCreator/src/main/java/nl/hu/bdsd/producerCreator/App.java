@@ -26,7 +26,7 @@ public class App {
 			for (int index = 0; index < IKafkaConstants.MESSAGE_COUNT; index++) {
 				String line = br.readLine();
 				final ProducerRecord<Long, String> record = new ProducerRecord<Long, String>(IKafkaConstants.TOPIC_NAME,
-						line.substring(0, line.length() - 1));
+						(long) index, line.substring(0, line.length() - 1));
 
 				try {
 					RecordMetadata metadata = producer.send(record).get();
