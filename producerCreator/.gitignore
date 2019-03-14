@@ -2,6 +2,7 @@ complete-dump.json
 
 /target/
 /.settings/
+/.idea/
 
 .classpath
 .project
