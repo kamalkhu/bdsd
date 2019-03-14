@@ -89,7 +89,7 @@ public class App {
 				//Add it to the list with all articles
 				articles.put(record.key(), doc);
 				//Get the TF scores for the document
-				doc.setTfScores(TFIDF.computeTF(doc.getText()));
+				doc.setTfScores(TFIDF.computeTF(TFIDF.getWords(doc.getText())));
 
 				//If there is a batch of 1000 Articles ready, calculate the IDF and TF-IDF and then insert them into Mongo DB
 				if(articles.size() >= 1000) {
