@@ -7,7 +7,7 @@ import com.mongodb.MongoClient;
 public class BaseDAO {
 
 	@SuppressWarnings("resource")
-	public static DB connection() {
+	public DB connection() {
 		MongoClient mongo = new MongoClient("localhost", 27017);
 		DB db = mongo.getDB("bdsd");
 		return db;
