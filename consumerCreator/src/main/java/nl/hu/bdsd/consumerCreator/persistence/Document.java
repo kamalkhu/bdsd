@@ -1,37 +1,53 @@
 package nl.hu.bdsd.consumerCreator.persistence;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Set;
 
 import com.mongodb.DB;
 import com.mongodb.MongoClient;
 
-public class App {
-	public static void main(String[] args) {
-		try {
+public class Document {
+	public String title;
+	public String source;
+	public String text;
+	public String location;
+	public String date;
+	public HashMap<String, Double> tfScores;
+	public HashMap<String, Double> idfScores;
+	public HashMap<String, Double> tfIdfScores;
 
-			MongoClient mongoClient = new MongoClient("localhost");
-
-			@SuppressWarnings("deprecation")
-			List<String> databases = mongoClient.getDatabaseNames();
-
-			for (String dbName : databases) {
-				System.out.println("- Database: " + dbName);
-
-				@SuppressWarnings("deprecation")
-				DB db = mongoClient.getDB(dbName);
-
-				Set<String> collections = db.getCollectionNames();
-				for (String colName : collections) {
-					System.out.println("\t + Collection: " + colName);
-				}
-			}
-
-			mongoClient.close();
-
-		} catch (Exception ex) {
-			ex.printStackTrace();
-		}
-
+	public Document(String title, String source, String text, String location, String date) {
+		this.title = title;
+		this.source = source;
+		this.text = text;
+		this.location = location;
+		this.date = date;
 	}
+
+	public HashMap<String, Double> getIdfScores() {
+		return idfScores;
+	}
+
+	public HashMap<String, Double> getTfScores() {
+		return this.tfScores;
+	}
+
+	public HashMap<String, Double> getTfIdfScores() {
+		return this.tfIdfScores;
+	}
+
+	public void setTfScores(HashMap<String, Double> tfScores) {
+		this.tfScores = tfScores;
+	}
+
+	public void setIdfScores(HashMap<String, Double> idfScores) {
+		this.idfScores = idfScores;
+	}
+
+	public void setTfIdfScores(HashMap<String, Double> tfIdfScores) {
+		this.tfIdfScores = tfIdfScores;
+	}
+
+	public String getText(){ return this.text; }
 }
