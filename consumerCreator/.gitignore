@@ -1,0 +1,7 @@
+complete-dump.json
+
+/target/
+/.settings/
+
+.classpath
+.project
