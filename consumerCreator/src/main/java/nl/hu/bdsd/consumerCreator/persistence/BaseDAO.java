@@ -8,10 +8,14 @@ import com.mongodb.MongoClient;
 public class BaseDAO {
 
 	@SuppressWarnings("resource")
-	public void getStuff() {
+	public static DB getDatabase() {
 		MongoClient mongo = new MongoClient("localhost", 27017);
 		DB db = mongo.getDB("bdsd");
-		Set<String> tables = db.getCollectionNames();
+		return db;
+	}
+
+	public static void main(String[] args) {
+		Set<String> tables = getDatabase().getCollectionNames();
 
 		for (String coll : tables) {
 			System.out.println(coll);
