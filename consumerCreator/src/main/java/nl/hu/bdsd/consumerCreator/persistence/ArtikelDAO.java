@@ -1,15 +1,17 @@
 package nl.hu.bdsd.consumerCreator.persistence;
 
-import com.mongodb.DB;
-import com.mongodb.MongoClient;
+import java.util.Set;
 
-@SuppressWarnings("deprecation")
-public class BaseDAO {
+public class ArtikelDAO extends BaseDAO {
 
-	@SuppressWarnings("resource")
-	public DB connection() {
-		MongoClient mongo = new MongoClient("localhost", 27017);
-		DB db = mongo.getDB("bdsd");
-		return db;
+	public void main(String[] args) {
+		try {
+			Set<String> tables = super.connection().getCollectionNames();
+			for (String coll : tables) {
+				System.out.println(coll);
+			}
+		} catch (Exception e) {
+			System.out.println(e);
+		}
 	}
 }
