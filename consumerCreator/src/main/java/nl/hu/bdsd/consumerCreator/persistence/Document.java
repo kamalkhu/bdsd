@@ -9,6 +9,7 @@ import com.mongodb.DB;
 import com.mongodb.MongoClient;
 
 public class Document {
+	public String _id;
 	public String title;
 	public String source;
 	public String text;
@@ -19,7 +20,8 @@ public class Document {
 	public HashMap<String, Double> tfIdfScores;
 	public String[] keywords;
 
-	public Document(String title, String source, String text, String location, String date) {
+	public Document(String _id, String title, String source, String text, String location, String date) {
+		this._id = _id;
 		this.title = title;
 		this.source = source;
 		this.text = text;
