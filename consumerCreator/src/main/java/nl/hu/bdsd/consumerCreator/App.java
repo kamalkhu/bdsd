@@ -19,7 +19,6 @@ import nl.hu.bdsd.consumerCreator.persistence.Document;
 public class App {
 
 	private static HashMap<Long, Document> articles = new HashMap<Long, Document>();
-	private static HashMap<String, Double> idfScores = new HashMap<String, Double>();
 
 	public static void main(String[] args) throws IOException {
 		runConsumer();
@@ -44,14 +43,13 @@ public class App {
 				try {
 					title = jsonObject.get("_source").getAsJsonObject().get("title").getAsString();
 					source = jsonObject.get("_source").getAsJsonObject().get("source").getAsString();
-					text = jsonObject.get("_source").getAsJsonObject().get("text").getAsString();
+					text = jsonObject.get("_source").getAsJsonObject().get("description").getAsString();
 					location = jsonObject.get("_source").getAsJsonObject().get("location").getAsString();
 					date = jsonObject.get("_source").getAsJsonObject().get("date").getAsString();
 				}
 
 				catch (NullPointerException e){
-					title = "no title available";
-					break;
+					continue;
 				}
 
 				// print the key and title for the consumer records.
@@ -60,15 +58,22 @@ public class App {
 				Document doc = new Document(title, source, text, location, date);
 				//Add it to the list with all articles
 				articles.put(record.key(), doc);
+				//Get the TF scores for the document
+				doc.setTfScores(computeTF(doc.getText()));
 
-				handleArticle(doc);
+				//If there is a batch of 1000 Articles ready, calculate the IDF and TF-IDF and then insert them into Mongo DB
+				if(articles.size() >= 1000) {
+					HashMap<String, Double> idfScores = computeIDF(articles);
+					System.out.println("Calculating IDF anf TF-IDF scores for batch...");
+					for (Document article: articles.values()){
+						article.setTfIdfScores(computeTFIDF(article.getTfScores(), idfScores));
+					}
+					System.out.println("Done!");
+					//Empty the articles Map and wait for another batch
+					articles.clear();
+				}
 			}
 		}
-	}
-
-	public static void handleArticle(Document doc) {
-		HashMap<String, Double> tfScores = computeTF(doc.getText());
-		doc.setTfScores(tfScores);
 	}
 
 	public static HashMap<String, Double> computeTF(String articleText) {
@@ -93,15 +98,12 @@ public class App {
 		return count;
 	}
 
-	public static HashMap<String, Double> computeIDF(HashMap<String, String> articlesText) {
+	public static HashMap<String, Double> computeIDF(HashMap<Long, Document> articles) {
 		HashMap<String, Double> idfScores = new HashMap<String, Double>();
+
 		HashMap<String, Integer> wordCounter = new HashMap<String, Integer>();
-		for(Map.Entry<String, String> text: articlesText.entrySet()) {
-			String[] wordsArray = text.getValue().split("\\s+");
-			Set<String> words = new HashSet<String>();
-			for(String splitWord: wordsArray) {
-				words.add(splitWord);
-			}
+		for(Document article: articles.values()) {
+			Set<String> words = new HashSet<String>(Arrays.asList(article.getText().split("\\s+")));
 			for(String word: words) {
 				if(wordCounter.containsKey(word)) {
 					wordCounter.put(word, wordCounter.get(word) + 1);
@@ -116,7 +118,6 @@ public class App {
 			double score = Math.log10(articles.size() /  (double) word.getValue());
 			idfScores.put(word.getKey(), score);
 		}
-
 		return idfScores;
 	}
 
