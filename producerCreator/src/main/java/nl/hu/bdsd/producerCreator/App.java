@@ -14,16 +14,26 @@ import nl.hu.bdsd.producerCreator.producer.ProducerCreator;
 
 public class App {
 	public static void main(String[] args) throws IOException {
-		runProducer();
+		int messageCount = IKafkaConstants.MESSAGE_COUNT;
+		
+		if(args.length > 0) {
+			try {
+				messageCount = Integer.parseInt(args[0]);
+			} catch (NumberFormatException e) {
+				// Use default messageCount
+			}
+			
+		}
+		runProducer(messageCount);
 	}
 
-	static void runProducer() throws IOException {
+	static void runProducer(int messageCount) throws IOException {
 		String file = "complete-dump.json";
 		Producer<Long, String> producer = ProducerCreator.createProducer();
 
 		try (BufferedReader br = new BufferedReader(new FileReader(file))) {
 
-			for (int index = 0; index < IKafkaConstants.MESSAGE_COUNT; index++) {
+			for (int index = 0; index < messageCount; index++) {
 				String line = br.readLine();
 				final ProducerRecord<Long, String> record = new ProducerRecord<Long, String>(IKafkaConstants.TOPIC_NAME,
 						(long) index, line.substring(0, line.length() - 1));
