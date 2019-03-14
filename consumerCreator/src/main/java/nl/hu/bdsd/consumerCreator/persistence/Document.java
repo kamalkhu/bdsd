@@ -3,7 +3,8 @@ package nl.hu.bdsd.consumerCreator.persistence;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Set;
-
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 import com.mongodb.DB;
 import com.mongodb.MongoClient;
 
@@ -17,6 +18,7 @@ public class Document {
 	public HashMap<String, Double> tfScores;
 	public HashMap<String, Double> idfScores;
 	public HashMap<String, Double> tfIdfScores;
+	public String[] keywords;
 
 	public Document(String _id, String title, String source, String text, String location, String date) {
 		this._id = _id;
@@ -51,5 +53,22 @@ public class Document {
 		this.tfIdfScores = tfIdfScores;
 	}
 
+	public void setKeywords(String[] keywords){ this.keywords = keywords; }
+
 	public String getText(){ return this.text; }
+
+	public JsonObject toJson() {
+		JsonObject json = new JsonObject();
+		JsonObject keywords = new JsonObject();
+		for(String keyword: this.keywords) {
+			keywords.addProperty("keyword", keyword);
+		}
+		json.addProperty("title", this.title);
+		json.addProperty("source", this.source);
+		json.addProperty("text", this.text);
+		json.addProperty("location", this.location);
+		json.addProperty("date", this.date);
+		json.add("keywords", keywords);
+		return json;
+	}
 }
