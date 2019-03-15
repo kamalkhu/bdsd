@@ -3,15 +3,17 @@ package nl.hu.bdsd.consumerCreator.persistence;
 import java.util.HashMap;
 
 public class Document {
-	private String _id;
-	private String title;
-	private String source;
-	private String text;
-	private String location;
-	private String date;
-	private HashMap<String, Double> tfScores;
-	private HashMap<String, Double> idfScores;
-	private HashMap<String, Double> tfIdfScores;
+
+	public String _id;
+	public String title;
+	public String source;
+	public String text;
+	public String location;
+	public String date;
+	public HashMap<String, Double> tfScores;
+	public HashMap<String, Double> idfScores;
+	public ArrayList<Keyword> tfIdfScores;
+	public ArrayList<Keyword> topKeywords;
 	private String[] keywords;
 	private String[] parties;
 
@@ -89,20 +91,19 @@ public class Document {
 		this.idfScores = idfScores;
 	}
 
-	public HashMap<String, Double> getTfIdfScores() {
-		return tfIdfScores;
-	}
-
-	public void setTfIdfScores(HashMap<String, Double> tfIdfScores) {
+	public void setTfIdfScores(ArrayList<Keyword> tfIdfScores) {
 		this.tfIdfScores = tfIdfScores;
 	}
 
-	public String[] getKeywords() {
-		return keywords;
-	}
+	public String getText(){ return this.text; }
 
-	public void setKeywords(String[] keywords) {
-		this.keywords = keywords;
+	public ArrayList<Keyword> getTopKeywords(int numberOfKeyWords) {
+		Collections.sort(this.tfIdfScores.arrayList, (w1, w2) -> w1.getScore().compareTo(w2.getScore()));
+		ArrayList<String> keywords = ArrayList<String>();
+		for(Keyword keyword: this.tfIdfScores.subList(0, Integer.min(numberOfKeyWords, this.tfIdfScores.size())) {
+			keywords.add(keyword.getWord())
+		}
+		return keywords;
 	}
 
 	public String[] getParties() {

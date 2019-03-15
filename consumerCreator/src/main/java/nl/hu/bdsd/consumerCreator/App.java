@@ -34,7 +34,7 @@ public class App {
 		Consumer<Long, String> consumer = ConsumerCreator.createConsumer();
 		consumer.subscribe(Arrays.asList(IKafkaConstants.TOPIC_NAME));
 		JsonParser parser = new JsonParser();
-
+		ArtikelDAO aDao = new ArtikelDAO();
 		while (true) {
 			ConsumerRecords<Long, String> records = consumer.poll(Duration.ofMillis((long) 100));
 
@@ -132,7 +132,6 @@ public class App {
 					ArticleDAO aDao = new ArticleDAO();
 					HashMap<String, Double> idfScores = TFIDF.computeIDF(articles);
 					System.out.println("Calculating IDF anf TF-IDF scores for batch...");
-
 					for (Document article : articles.values()) {
 						article.setTfIdfScores(TFIDF.computeTFIDF(article.getTfScores(), idfScores));
 						aDao.insertArticle(article);
