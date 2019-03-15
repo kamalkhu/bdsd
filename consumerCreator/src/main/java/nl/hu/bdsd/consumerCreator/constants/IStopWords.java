@@ -28,6 +28,17 @@ public interface IStopWords {
 			+ " nergens moest waarom daar ja wij nogal opzij vooraf moet weer veel toenmaals zichzelf vaak gauw mijzelf"
 			+ " beneden niks wiens der uit ongeveer ben wil kan met eerst toen mrs vaakwat doch intussen mogen negen"
 			+ " zijne eigen mevr doe moesten eveneens doet vervolgens omdat dertig zonder sinds zouden zelfde tja"
-			+ " waarschijnlijk zeker het").split(" ");
+			+ " waarschijnlijk zeker het few these ours y don you'd d been his i why's with could not couldn't didn't"
+			+ " shan't into should've if have doing during he'll shouldn yourself there's am hers who's such isn't other"
+			+ " out aren he'd our mustn't more i've them the yours ought when's once having will nor just himself at"
+			+ " you'll only down ain didn that'll they're below yourselves no then my we're all you're t mustn i'll how"
+			+ " we'd so haven mightn same needn't can re were do wouldn each own we ll shan its it this through very"
+			+ " myself had under what's after m her where those as their is your hasn for from herself you doesn't"
+			+ " mightn't haven't let's him in be they'd isn they should are because being here wasn before did here's"
+			+ " weren both about which ourselves there theirs he's it's me aren't when shouldn't above by and that than"
+			+ " some i'd don't against they'll on hadn't that's doesn won themselves but where's up or itself of wasn't"
+			+ " has wouldn't needn whom now over she we'll off she's o they've we've who again to a any couldn weren't"
+			+ " between s while was ve would you've how's he she'd what an until won't hadn most she'll ma i'm too hasn't"
+			+ " further does why").split(" ");
 	
 }

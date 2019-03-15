@@ -25,7 +25,7 @@ public class ArticleDAO extends BaseDAO {
 			.append("location", document.getLocation())
 			.append("date", document.getDate())
 			.append("source", document.getSource())
-			.append("key_words", document.getTopKeywords(10))
+			.append("key_words", document.getTopKeywords(20))
 			.append("parties", document.getParties());
 		collection.insert(dbObject);
 	}
