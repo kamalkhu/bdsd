@@ -13,6 +13,7 @@ import nl.hu.bdsd.consumerCreator.persistence.Document;
 public class TFIDF {
 	
 	public static String[] getWords(String document) {
+		if (document == null) { return new String[0]; }
 		String cleanDocument = document.toLowerCase();
 		// Remove html tags
 		cleanDocument = Jsoup.parse(cleanDocument).text();
