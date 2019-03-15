@@ -28,6 +28,40 @@ public interface IStopWords {
 			+ " nergens moest waarom daar ja wij nogal opzij vooraf moet weer veel toenmaals zichzelf vaak gauw mijzelf"
 			+ " beneden niks wiens der uit ongeveer ben wil kan met eerst toen mrs vaakwat doch intussen mogen negen"
 			+ " zijne eigen mevr doe moesten eveneens doet vervolgens omdat dertig zonder sinds zouden zelfde tja"
-			+ " waarschijnlijk zeker het").split(" ");
+			+ " waarschijnlijk zeker het aan aangaande aangezien achter achterna afgelopen al aldaar aldus alhoewel " +
+			"alias alle allebei alleen alsnog altijd altoos ander andere anders anderszins behalve behoudens beide beiden " +
+			"ben beneden bent bepaald betreffende bij binnen binnenin boven bovenal bovendien bovengenoemd bovenstaand bovenvermeld " +
+			"buiten daar daarheen daarin daarna daarnet daarom daarop daarvanlangs dan dat de die dikwijls dit door doorgaand dus echter eer " +
+			"eerdat eerder eerlang eerst elk elke en enig enigszins enkel er erdoor even eveneens evenwel gauw gedurende geen gehad gekund geleden " +
+			"gelijk gemoeten gemogen geweest gewoon gewoonweg haar had hadden hare heb hebben hebt heeft hem hen het hierbeneden hierboven hij hoe hoewel " +
+			"hun hunne ik ikzelf in inmiddels inzake is jezelf jij jijzelf jou jouw jouwe juist jullie kan klaar kon konden krachtens kunnen kunt later " +
+			"liever maar mag meer met mezelf mij mijn mijnent mijner mijzelf misschien mocht mochten moest moesten moet moeten mogen na naar nadat net " +
+			"niet noch nog nogal nu of ofschoon om omdat omhoog omlaag omstreeks omtrent omver onder ondertussen ongeveer ons onszelf onze ook op opnieuw " +
+			"opzij over overeind overigens pas precies reeds rond rondom sedert sinds sindsdien slechts sommige spoedig steeds tamelijk tenzij terwijl " +
+			"thans tijdens toch toen toenmaals toenmalig tot totdat tussen uit uitgezonderd vaakwat van vandaan vanuit vanwege veeleer verder vervolgens" +
+			" vol volgens voor vooraf vooral vooralsnog voorbij voordat voordezen voordien voorheen voorop vooruit vrij vroeg waar waarom wanneer want " +
+			"waren was weer weg wegens wel weldra welk welke wie wiens wier wij wijzelf zal ze zelfs zichzelf zij zijn zijne zo zodra zonder zou zouden " +
+			"zowat zulke zullen zult aan af al alles als altijd andere ben bij daar dan dat de der deze die dit doch doen door dus een eens en er ge geen " +
+			"geweest haar had heb hebben heeft hem het hier hij hoe hun iemand iets ik in is ja je kan kon kunnen maar me meer men met mij mijn moet na naar " +
+			"niet niets nog nu of om omdat ons ook op over reeds te tegen toch toen tot u uit uw van veel voor want waren was wat we wel werd wezen wie wij wil " +
+			"worden zal ze zei zelf zich zij zijn zo zonder zou de en van ik te dat die in een hij het niet zijn is was op aan met als voor had er maar om hem dan " +
+			"zou of wat mijn men dit zo door over ze zich bij ook tot je mij uit der daar haar naar heb hoe heeft hebben deze u want nog zal me zij nu ge geen " +
+			"omdat iets worden toch al waren veel meer doen toen moet ben zonder kan hun dus alles onder ja eens hier wie werd altijd doch wordt wezen kunnen ons " +
+			"zelf tegen na reeds wil kon niets uw iemand geweest andere aan achte achter af al alle alleen alles als ander anders beetje behalve beide beiden ben " +
+			"beneden bent bij bijna bijv blijkbaar blijken boven bv daar daardoor daarin daarna daarom daaruit dan dat de deden deed derde derhalve " +
+			"dertig deze dhr die dit doe doen doet door drie duizend echter een eens eerst eerste eigen eigenlijk elk elke en enige er erg ergens etc etcetera " +
+			"even geen genoeg geweest haar haarzelf had hadden heb hebben hebt hedden heeft heel hem hemzelf hen het hetzelfde hier hierin hierna hierom hij " +
+			"hijzelf hoe honderd hun ieder iedere iedereen iemand iets ik in inderdaad intussen is ja je jij jijzelf jou jouw jullie kan kon konden kun kunnen " +
+			"kunt laatst later lijken lijkt maak maakt maakte maakten maar mag maken me meer meest meestal men met mevr mij mijn minder miss misschien missen mits " +
+			"mocht mochten moest moesten moet moeten mogen mr mrs mw na naar nam namelijk nee neem negen nemen nergens niemand niet niets niks noch nochtans nog " +
+			"nooit nu nv of om omdat ondanks onder ondertussen ons onze onzeker ooit ook op over overal overige paar per recent redelijk samen sinds steeds te " +
+			"tegen tegenover thans tien tiende tijdens tja toch toe tot totdat tussen twee tweede u uit uw vaak van vanaf veel veertig verder verscheidene " +
+			"verschillende via vier vierde vijf vijfde vijftig volgend volgens voor voordat voorts waar waarom waarschijnlijk wanneer waren was wat we wederom " +
+			"weer weinig wel welk welke werd werden werder whatever wie wij wijzelf wil wilden willen word worden wordt zal ze zei zeker zelf zelfde zes zeven " +
+			"zich zij zijn zijzelf zo zoals zodat zou zouden zulk zullen aan af al als bij dan dat die dit een en er had heb hem het hij hoe hun ik in is je kan " +
+			"me men met mij nog nu of ons ook te tot uit van was wat we wel wij zal ze zei zij zo zou de en van ik te dat die in een hij het niet zijn is was op" +
+			" aan met als voor had er maar om hem dan zou of wat mijn men dit zo door over ze zich bij ook tot je mij uit der daar haar naar heb hoe heeft " +
+			"hebben deze u want nog zal me zij nu ge geen omdat iets worden toch al waren veel meer doen toen moet ben zonder kan hun dus alles onder ja eens " +
+			"hier wie werd altijd doch wordt wezen kunnen ons zelf tegen na reeds wil kon niets uw iemand geweest andere").split(" ");
 	
 }
