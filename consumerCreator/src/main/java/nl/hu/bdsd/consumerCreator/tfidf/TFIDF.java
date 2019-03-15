@@ -1,8 +1,10 @@
 package nl.hu.bdsd.consumerCreator.tfidf;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -23,7 +25,7 @@ public class TFIDF {
 		// Remove special characters
 		cleanDocument = cleanDocument.replaceAll("(\\\\.)|[^a-zA-Z]", " ");
 		cleanDocument = cleanDocument.trim();
-		List<String> words = Arrays.asList(cleanDocument.split(" +"));
+		List<String> words = new LinkedList<String>(Arrays.asList(cleanDocument.split(" +")));
 		words.removeAll(Arrays.asList(IStopWords.STOPWORDS));
 		return words.toArray(new String[0]);
 	}

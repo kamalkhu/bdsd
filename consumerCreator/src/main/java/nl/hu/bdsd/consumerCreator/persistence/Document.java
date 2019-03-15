@@ -1,5 +1,6 @@
 package nl.hu.bdsd.consumerCreator.persistence;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Document {
@@ -95,13 +96,11 @@ public class Document {
 		this.tfIdfScores = tfIdfScores;
 	}
 
-	public String getText(){ return this.text; }
-
 	public ArrayList<Keyword> getTopKeywords(int numberOfKeyWords) {
 		Collections.sort(this.tfIdfScores.arrayList, (w1, w2) -> w1.getScore().compareTo(w2.getScore()));
 		ArrayList<String> keywords = ArrayList<String>();
 		for(Keyword keyword: this.tfIdfScores.subList(0, Integer.min(numberOfKeyWords, this.tfIdfScores.size())) {
-			keywords.add(keyword.getWord())
+			keywords.add(keyword.getWord());
 		}
 		return keywords;
 	}

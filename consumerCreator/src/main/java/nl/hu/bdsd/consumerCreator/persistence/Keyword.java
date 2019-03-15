@@ -5,7 +5,7 @@ public class Keyword {
     private String word;
     private Double score;
 
-    public Document(String word, Double score) {
+    public Keyword(String word, Double score) {
         this.word = word;
         this.score = score;
     }
