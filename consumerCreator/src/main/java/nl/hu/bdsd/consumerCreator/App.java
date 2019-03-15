@@ -124,6 +124,7 @@ public class App {
 				doc.setTfScores(TFIDF.computeTF(TFIDF.getWords(doc.getText())));
 				// Add it to the list with all articles
 				articles.put(record.key(), doc);
+				System.out.println(String.format("Record with key %s added, size=%s", record.key(), articles.size()));
 
 				// If there is a batch of 1000 Articles ready, calculate the IDF and TF-IDF and
 				// then insert them into MongoDB
@@ -135,6 +136,7 @@ public class App {
 					for (Document article : articles.values()) {
 						article.setTfIdfScores(TFIDF.computeTFIDF(article.getTfScores(), idfScores));
 						aDao.insertArticle(article);
+						System.out.println("Article added!");
 					}
 
 					System.out.println("Done!");
