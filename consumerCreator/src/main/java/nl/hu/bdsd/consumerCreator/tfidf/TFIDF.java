@@ -3,11 +3,13 @@ package nl.hu.bdsd.consumerCreator.tfidf;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
 import org.jsoup.Jsoup;
 
+import nl.hu.bdsd.consumerCreator.constants.IStopWords;
 import nl.hu.bdsd.consumerCreator.persistence.Document;
 
 public class TFIDF {
@@ -20,7 +22,9 @@ public class TFIDF {
 		// Remove special characters
 		cleanDocument = cleanDocument.replaceAll("(\\\\.)|[^a-zA-Z]", " ");
 		cleanDocument = cleanDocument.trim();
-		return cleanDocument.split(" +");
+		List<String> words = Arrays.asList(cleanDocument.split(" +"));
+		words.removeAll(Arrays.asList(IStopWords.STOPWORDS));
+		return words.toArray(new String[0]);
 	}
 	
 	public static HashMap<String, Double> computeTF(String[] words) {
