@@ -76,37 +76,37 @@ public class App {
 				String date;
 				String[] parties;
 
-				if (!titleElement.equals(null)) {
+				if (titleElement != null) {
 					title = titleElement.getAsJsonObject().get("title").getAsString();
 				} else {
 					title = null;
 				}
 
-				if (!sourceElement.equals(null)) {
+				if (sourceElement != null) {
 					source = sourceElement.getAsJsonObject().get("source").getAsString();
 				} else {
 					source = null;
 				}
 
-				if (!textElement.equals(null)) {
+				if (textElement != null) {
 					text = textElement.getAsJsonObject().get("text").getAsString();
 				} else {
 					text = null;
 				}
 
-				if (!locationElement.equals(null)) {
+				if (locationElement != null) {
 					location = locationElement.getAsJsonObject().get("location").getAsString();
 				} else {
 					location = null;
 				}
 
-				if (!dateElement.equals(null)) {
+				if (dateElement != null) {
 					date = dateElement.getAsJsonObject().get("date").getAsString();
 				} else {
 					date = null;
 				}
 				
-				if (!partiesElement.equals(null)) {
+				if (partiesElement != null) {
 					JsonArray partiesArray = partiesElement.getAsJsonObject().get("parties").getAsJsonArray();
 					List<String> partiesList = new ArrayList<String>();
 					for(int i = 0; i < partiesArray.size(); i++){
