@@ -9,6 +9,7 @@ import java.util.Set;
 import org.jsoup.Jsoup;
 
 import nl.hu.bdsd.consumerCreator.persistence.Document;
+import nl.hu.bdsd.consumerCreator.persistence.Keyword;
 
 public class TFIDF {
 	
@@ -66,10 +67,11 @@ public class TFIDF {
 		return idfScores;
 	}
 
-	public static HashMap<String, Double> computeTFIDF(HashMap<String, Double> tfScores, HashMap<String, Double> idfScores) {
-		HashMap<String, Double> tfIdfScores = new HashMap<String, Double>();
+	public static ArrayList<Keyword> computeTFIDF(HashMap<String, Double> tfScores, HashMap<String, Double> idfScores) {
+		ArrayList<Keyword> tfIdfScores = new ArrayList<Keyword>();
 		for(Map.Entry<String, Double> tfScore: tfScores.entrySet()) {
-			tfIdfScores.put(tfScore.getKey(), tfScore.getValue() * idfScores.get(tfScore.getKey()));
+			Keyword word = new Keyword(tfScore.getKey(), tfScore.getValue() * idfScores.get(tfScore.getKey()));
+			tfIdfScores.add(word);
 		}
 		return tfIdfScores;
 	}

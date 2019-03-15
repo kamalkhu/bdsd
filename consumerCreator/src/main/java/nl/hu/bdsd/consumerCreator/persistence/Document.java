@@ -17,8 +17,8 @@ public class Document {
 	public String date;
 	public HashMap<String, Double> tfScores;
 	public HashMap<String, Double> idfScores;
-	public HashMap<String, Double> tfIdfScores;
-	public String[] keywords;
+	public ArrayList<Keyword> tfIdfScores;
+	public ArrayList<Keyword> topKeywords;
 
 	public Document(String _id, String title, String source, String text, String location, String date) {
 		this._id = _id;
@@ -49,13 +49,20 @@ public class Document {
 		this.idfScores = idfScores;
 	}
 
-	public void setTfIdfScores(HashMap<String, Double> tfIdfScores) {
+	public void setTfIdfScores(ArrayList<Keyword> tfIdfScores) {
 		this.tfIdfScores = tfIdfScores;
 	}
 
-	public void setKeywords(String[] keywords){ this.keywords = keywords; }
-
 	public String getText(){ return this.text; }
+
+	public ArrayList<Keyword> getTopKeywords(int numberOfKeyWords) {
+		ArrayList<Keyword> topwords = new ArrayList<Keyword>();
+		Collections.sort(this.tfIdfScores.arrayList, (w1, w2) -> w1.getScore().compareTo(w2.getScore()));
+		for(int i = 0; i >= numberOfKeyWords; i++) {
+			topwords.add(this.tfIdfScores[i]);
+		}
+		return topwords;
+	}
 
 	public JsonObject toJson() {
 		JsonObject json = new JsonObject();
