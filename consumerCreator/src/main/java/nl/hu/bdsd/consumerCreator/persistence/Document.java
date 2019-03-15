@@ -1,14 +1,9 @@
 package nl.hu.bdsd.consumerCreator.persistence;
 
 import java.util.HashMap;
-import java.util.List;
-import java.util.Set;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
-import com.mongodb.DB;
-import com.mongodb.MongoClient;
 
 public class Document {
+
 	public String _id;
 	public String title;
 	public String source;
@@ -19,30 +14,77 @@ public class Document {
 	public HashMap<String, Double> idfScores;
 	public ArrayList<Keyword> tfIdfScores;
 	public ArrayList<Keyword> topKeywords;
+	private String[] keywords;
+	private String[] parties;
 
-	public Document(String _id, String title, String source, String text, String location, String date) {
+	public Document(String _id, String title, String source, String text, String location, String date, String[] parties) {
 		this._id = _id;
 		this.title = title;
 		this.source = source;
 		this.text = text;
 		this.location = location;
 		this.date = date;
+		this.setParties(parties);
 	}
 
-	public HashMap<String, Double> getIdfScores() {
-		return idfScores;
+	public String get_id() {
+		return _id;
+	}
+
+	public void set_id(String _id) {
+		this._id = _id;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public String getSource() {
+		return source;
+	}
+
+	public void setSource(String source) {
+		this.source = source;
+	}
+
+	public String getText() {
+		return text;
+	}
+
+	public void setText(String text) {
+		this.text = text;
+	}
+
+	public String getLocation() {
+		return location;
+	}
+
+	public void setLocation(String location) {
+		this.location = location;
+	}
+
+	public String getDate() {
+		return date;
+	}
+
+	public void setDate(String date) {
+		this.date = date;
 	}
 
 	public HashMap<String, Double> getTfScores() {
-		return this.tfScores;
-	}
-
-	public HashMap<String, Double> getTfIdfScores() {
-		return this.tfIdfScores;
+		return tfScores;
 	}
 
 	public void setTfScores(HashMap<String, Double> tfScores) {
 		this.tfScores = tfScores;
+	}
+
+	public HashMap<String, Double> getIdfScores() {
+		return idfScores;
 	}
 
 	public void setIdfScores(HashMap<String, Double> idfScores) {
@@ -60,18 +102,11 @@ public class Document {
 		return this.tfIdfScores.subList(0, Integer.min(numberOfKeyWords, this.tfIdfScores.size());
 	}
 
-	public JsonObject toJson() {
-		JsonObject json = new JsonObject();
-		JsonObject keywords = new JsonObject();
-		for(String keyword: this.keywords) {
-			keywords.addProperty("keyword", keyword);
-		}
-		json.addProperty("title", this.title);
-		json.addProperty("source", this.source);
-		json.addProperty("text", this.text);
-		json.addProperty("location", this.location);
-		json.addProperty("date", this.date);
-		json.add("keywords", keywords);
-		return json;
+	public String[] getParties() {
+		return parties;
 	}
+
+	public void setParties(String[] parties) {
+		this.parties = parties;
+	}	
 }
